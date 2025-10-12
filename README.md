@@ -80,7 +80,7 @@ terraform destroy -auto-approve
 5️⃣ Access the Helpdesk App
 Once the deployment is complete, open your browser:
 
-http://<EC2-Public-IP>:8000
+http://ec2-44-212-43-172.compute-1.amazonaws.com:8000/
 
 ---
 
