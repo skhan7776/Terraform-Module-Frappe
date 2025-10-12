@@ -6,7 +6,7 @@ A modular Terraform setup for deploying AWS infrastructure and containerized app
 
 ## 📁 Project Structure
 
-![alt text](image.png)
+https://sdmntprcentralus.oaiusercontent.com/files/00000000-06d0-61f5-bcaf-2c6466eae563/raw?se=2025-10-12T21%3A54%3A04Z&sp=r&sv=2024-08-04&sr=b&scid=93b25d04-f993-51fc-8215-e4fd97954f85&skoid=71e8fa5c-90a9-4c17-827b-14c3005164d6&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-10-12T12%3A26%3A20Z&ske=2025-10-13T12%3A26%3A20Z&sks=b&skv=2024-08-04&sig=acvCMmIz8Y1Cn4vdCKOS%2B0mjQQvTuVF8e9WjqlTAsPI%3D
 └── .gitignore
 
 
