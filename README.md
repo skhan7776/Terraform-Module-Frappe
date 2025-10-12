@@ -13,12 +13,6 @@ The project follows an **Infrastructure as Code (IaC)** approach using Terraform
 
 ---
 
-## 🏗️ Architecture Diagram
-
-Below is the architecture of the deployment:
-
-![Architecture Diagram](A_flowchart_diagram_depicts_an_AWS_cloud-based_inf.png)
-
 **Flow Summary:**
 1. Terraform provisions a VPC, subnet, and EC2 instance.
 2. EC2 user data executes `init.sh`.
@@ -27,7 +21,6 @@ Below is the architecture of the deployment:
 5. Access the app via `http://<ec2-public-ip>:8000`.
 
 ---
-
 
 ## 📁 Project Structure
 
@@ -132,9 +125,6 @@ Containerized Ticketing Application using Terraform-managed EC2.
 🧾 License
 MIT License © 2025 Sameer Ahmed Khan
 You are free to use and modify this project.
-
----
-
 
 ---
 
