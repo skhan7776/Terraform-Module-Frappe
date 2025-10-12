@@ -6,28 +6,7 @@ A modular Terraform setup for deploying AWS infrastructure and containerized app
 
 ## 📁 Project Structure
 
-Terraform-Module/
-├── instancestate.sh # Script to manage EC2 instance state
-
-├── modules/
-│ ├── EC2/
-│ │ ├── EC2.tf # EC2 instance configuration
-│ │ ├── variables.tf # Input variables for EC2
-│ └── VPC/
-│ ├── VPC.tf # VPC and networking setup
-│ ├── variables.tf # Input variables for VPC
-│ ├── output.tf # Outputs for VPC
-│ └── provider.tf # AWS provider configuration
-
-├── services/
-│ ├── sameer-ec2/ # Frappe/Helpdesk deployment
-│ │ ├── main.tf
-│ │ ├── docker-compose.yml
-│ │ └── init.sh
-│ └── portshell-ticketing/ # Portshell Ticketing setup
-│ ├── main.tf
-│ ├── docker-compose.yml
-│ └── init.sh
+![alt text](image.png)
 └── .gitignore
 
 
