@@ -1,23 +1,78 @@
-# Terraform-Module
+# 🧩 Terraform-Based AWS EC2 Deployment for Frappe Helpdesk
 
-A modular Terraform setup for deploying AWS infrastructure and containerized applications like **Frappe Helpdesk** and **Portshell Ticketing** using EC2, Docker, and Terraform.
+This project automates the provisioning of AWS infrastructure and deployment of a containerized **Frappe Helpdesk** application using **Terraform**, **EC2**, **Docker**, and **Docker Compose**.
 
 ---
+
+## 📘 Overview
+
+The project follows an **Infrastructure as Code (IaC)** approach using Terraform to:
+- Create a **VPC**, **subnets**, and **security groups**
+- Launch an **EC2 instance**
+- Automatically run an `init.sh` script that sets up Docker, Docker Compose, and deploys the Helpdesk stack (`docker-compose.yml`)
+
+---
+
+## 🏗️ Architecture Diagram
+
+Below is the architecture of the deployment:
+
+![Architecture Diagram](A_flowchart_diagram_depicts_an_AWS_cloud-based_inf.png)
+
+**Flow Summary:**
+1. Terraform provisions a VPC, subnet, and EC2 instance.
+2. EC2 user data executes `init.sh`.
+3. The script installs Docker and Docker Compose.
+4. The Helpdesk application stack (Frappe + MariaDB + Redis) is launched.
+5. Access the app via `http://<ec2-public-ip>:8000`.
+
+---
+
 
 ## 📁 Project Structure
 
-https://sdmntprcentralus.oaiusercontent.com/files/00000000-06d0-61f5-bcaf-2c6466eae563/raw?se=2025-10-12T21%3A54%3A04Z&sp=r&sv=2024-08-04&sr=b&scid=93b25d04-f993-51fc-8215-e4fd97954f85&skoid=71e8fa5c-90a9-4c17-827b-14c3005164d6&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-10-12T12%3A26%3A20Z&ske=2025-10-13T12%3A26%3A20Z&sks=b&skv=2024-08-04&sig=acvCMmIz8Y1Cn4vdCKOS%2B0mjQQvTuVF8e9WjqlTAsPI%3D
-└── .gitignore
+Terraform-Module/
+├── .gitignore
+├── instancestate.sh
+├── modules/
+│ ├── EC2/
+│ │ ├── EC2.tf
+│ │ └── variables.tf
+│ └── VPC/
+│ ├── VPC.tf
+│ ├── output.tf
+│ ├── provider.tf
+│ └── variables.tf
+├── services/
+│ ├── portshell-ticketing/
+│ │ ├── docker-compose.yml
+│ │ ├── init.sh
+│ │ └── main.tf
+│ └── sameer-ec2/
+│ ├── docker-compose.yml
+│ ├── init.sh
+│ └── main.tf
+---
 
+## ⚙️ Prerequisites
+
+- AWS account with access keys configured (`aws configure`)
+- Terraform v1.5+ installed
+- Git installed
+- SSH key pair available in AWS EC2 Console
 
 ---
 
-## 🚀 Usage
+## 🚀 Deployment Steps
 
-### 
+### 1️⃣ Clone the Repository
+```bash
+git clone https://github.com/skhan7776/Terraform-Module.git
+cd Terraform-Module
+
+---
 
 1️⃣ Initialize Terraform
-```bash
 terraform init
 
 2️⃣ Plan your infrastructure
@@ -28,6 +83,11 @@ terraform apply -auto-approve
 
 4️⃣ Destroy the stack
 terraform destroy -auto-approve
+
+5️⃣ Access the Helpdesk App
+Once the deployment is complete, open your browser:
+
+http://<EC2-Public-IP>:8000
 
 ---
 
@@ -58,15 +118,6 @@ Containerized Frappe Helpdesk app.
 
 Portshell Ticketing
 Containerized Ticketing Application using Terraform-managed EC2.
-
----
-
-⚙️ Requirements
-
- ->Terraform ≥ 1.5
- ->AWS CLI configured (aws configure)
- ->Docker and Docker Compose (for app services)
- ->Valid AWS credentials
 
 ---
 
