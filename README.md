@@ -64,6 +64,8 @@ git clone https://github.com/skhan7776/Terraform-Module.git
 cd Terraform-Module
 
 ---
+export AWS_ACCESS_KEY_ID="YOUR_ACCESS_KEY_ID"
+export AWS_SECRET_ACCESS_KEY="YOUR_SECRET_ACCESS_KEY"
 
 1️⃣ Initialize Terraform
 terraform init
