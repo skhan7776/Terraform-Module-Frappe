@@ -25,3 +25,7 @@ variable "subnet_id" {
 variable "security_groups" {
   
 }
+
+variable "machine_name"{
+    
+}

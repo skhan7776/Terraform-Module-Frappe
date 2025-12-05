@@ -48,6 +48,6 @@ resource "aws_instance" "app_server" {
   EOF
 
   tags = {
-    Name = "helpdesk-server"
+    Name = var.machine_name
   }
 }
